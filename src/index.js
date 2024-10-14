@@ -15,7 +15,7 @@ import { decompress } from "./commands/decompress.mjs";
 
 let CURRENT_PATH = homedir();
 
-const username = process.argv[2].split('=')[1];
+const username = process.argv[2].split("=")[1];
 
 function init() {
   console.log(`Welcome to the File Manager, ${username}!`);
@@ -24,10 +24,9 @@ function init() {
   stdin.setEncoding("utf-8");
 
   stdin.on("data", (chuck) => commandMapper(chuck.trim()));
-  
-  process.on('SIGINT', () => process.exit());
-  process.on('exit', () => console.log(`Thank you for using File Manager, ${username}, goodbye!`));
 
+  process.on("SIGINT", () => process.exit());
+  process.on("exit", () => console.log(`Thank you for using File Manager, ${username}, goodbye!`));
 }
 
 async function commandMapper(chunk) {
@@ -118,8 +117,8 @@ async function commandMapper(chunk) {
       }
       break;
 
-      case ".exit":
-        process.exit();
+    case ".exit":
+      process.exit();
 
     default:
       console.log("Invalid input");
