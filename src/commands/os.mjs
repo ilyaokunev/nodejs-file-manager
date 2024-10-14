@@ -5,7 +5,7 @@ export function os(command) {
 
   switch (cmd) {
     case "EOL":
-      console.log(EOL);
+      console.log(JSON.stringify(EOL));
       break;
 
     case "cpus":
